@@ -7,7 +7,10 @@ class Instructor::LessonsController < ApplicationController
 	end
 
 	def create
-		@lesson = current_section.lessons.create(lesson_params)
+	#	@lesson = current_section.lessons.create(lesson_params)
+		@lesson = Lesson.new(lesson_params)
+		@lesson.section = current_section
+		@lesson.save
 		redirect_to instructor_course_path(current_section.course)
 	end
 
@@ -22,6 +25,12 @@ class Instructor::LessonsController < ApplicationController
 	helper_method :current_section
 	def current_section
 		@current_section ||= Section.find(params[:section_id])
+		# if @current_section.present? 
+			# return @current_section
+		#else 
+			# @current_section = Section.find(params[:section_id])
+			# return @current_section
+		# end 
 	end
 
 	def lesson_params
