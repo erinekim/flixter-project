@@ -12,9 +12,10 @@
     .vjs-fullscreen {padding-top: 0px}
   </style>
 </head>
-<body>
 
-<div id="wrap">
+<body class="Site">
+  
+<div class= "Site-content">
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -76,11 +77,11 @@
     <div class="col-xs-12 col-sm-3">
       <b>About</b>
       <br />
-      <%=link_to 'Team', '#' %> 
+      <%=link_to 'Team', team_path %> 
       <br />
-      <%=link_to 'Careers', '#' %>
+      <%=link_to 'Careers', careers_path %>
       <br />
-      <%= link_to 'Privacy Policy', '#' %>
+      <%= link_to 'Privacy Policy', privacy_path %>
     </div>
     <div class="col-xs-12 col-sm-3">
       <b>Contact</b>
