@@ -9,9 +9,7 @@ class LessonsController < ApplicationController
 
 	def require_enrollment_for_current_course
 
-		if current_user.enrolled_in?(current_lesson.section.course)
-			redirect_to lesson_path 
-		else 
+		if ! current_user.enrolled_in?(current_lesson.section.course)
 			redirect_to course_path(current_lesson.section.course), :alert => "Sorry, you must be enrolled in this course!"
 		end
 
