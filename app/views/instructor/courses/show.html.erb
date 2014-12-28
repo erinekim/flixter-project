@@ -1,7 +1,8 @@
 <script>
   $(function() {
-  	$('.new-lesson-button').click(function() {
-  	  alert('hello!');
+  	$('.new-lesson-button').click(function( event ) {
+  	  var lessonUrl = $( event.target).data('lesson-url');
+  	  alert( lessonUrl );
   	 }); 
 
     $('.lessons').sortable({
@@ -104,9 +105,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 
